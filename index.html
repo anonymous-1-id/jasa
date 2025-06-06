@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@_DPW Official | Jasa Pembuatan Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Aktifkan dark mode class-based
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    .transition-all {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans transition-all">
+
+<!-- TOGGLE DARK MODE -->
+<div class="fixed top-4 right-4 z-50">
+  <button id="darkModeToggle" aria-label="Toggle Dark Mode"
+          class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow hover:scale-110 transition-transform">
+    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" >
+      <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 1012 21a9 9 0 009-8.21z" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  const btn = document.getElementById('darkModeToggle');
+  const iconMoon = document.getElementById('iconMoon');
+
+  // Fungsi set icon sesuai mode
+  function setIcon(dark) {
+    if(dark) {
+      iconMoon.innerHTML = `
+        <path fill="currentColor" d="M12 4.5V3m0 18v-1.5m8.485-8.485H21m-18 0H3m14.142-5.657l1.06-1.06m-12.02 12.02l1.06-1.06m12.02 0l-1.06-1.06m-12.02-12.02l-1.06 1.06M12 7a5 5 0 100 10 5 5 0 000-10z"/>
+      `;
+    } else {
+      iconMoon.innerHTML = `
+        <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 1012 21a9 9 0 009-8.21z" />
+      `;
+    }
+  }
+
+  // Cek localStorage saat load halaman
+  if(localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    setIcon(true);
+  } else {
+    setIcon(false);
+  }
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark);
+    setIcon(isDark);
+  });
+</script>
+
+
+
+  <!-- HEADER -->
+<header class="bg-white dark:bg-gray-800 shadow-md p-5 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left">
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white">@_DPW Official</h1>
+    <p class="text-sm text-gray-600 dark:text-gray-300">Jasa Pembuatan Website Profesional & Murah</p>
+  </div>
+</header>
+
+
+
+  <!-- MAIN -->
+  <main class="max-w-4xl mx-auto mt-8 px-4">
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-6 transform hover:scale-[1.02] transition-all">
+      <h2 class="text-xl font-semibold text-gray-900 dark:text-white">🛒 Website Toko Online</h2>
+      <p class="mt-2 text-gray-600 dark:text-gray-300">
+        Website toko online yang langsung terhubung ke WhatsApp untuk memudahkan komunikasi dengan pembeli. Cocok untuk kebutuhan jual beli dalam skala kecil maupun besar.
+        Menampilkan produk dengan rapi dan responsif di semua perangkat.
+      </p>
+      <p class="mt-1 font-bold text-green-600">Rp 200.000</p>
+
+      <div class="mt-4 p-3 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-sm rounded">
+        Dengan melanjutkan ke WhatsApp, Anda menyatakan sudah memilih paket yang diberikan, siap untuk melakukan transaksi,
+        dan tidak akan membatalkan pesanan setelah ini. Silakan lanjutkan untuk detail pesanan lebih lanjut.
+      </div>
+
+      <div class="flex gap-3 mt-4 flex-wrap">
+        <a href="https://wa.me/6285786335575?text=Halo%2C%20saya%20ingin%20order%20toko%20online%20dari%20@_DPW%20Official"
+           class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm transition-all" target="_blank">
+          Pesan via WhatsApp
+        </a>
+        <a href="https://contohtoko.dpw.site"
+           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm transition-all" target="_blank">
+          Lihat Pratinjau
+        </a>
+      </div>
+    </div>
+
+    <!-- Tambah jasa lainnya di sini -->
+
+  </main>
+
+  <!-- FOOTER -->
+<footer class="bg-gray-200 dark:bg-gray-800 text-center text-sm text-gray-700 dark:text-gray-300 mt-10 py-6 space-y-2">
+  <div>
+    &copy; 2025 @_DPW Official. All rights reserved.
+  </div>
+  <div class="flex justify-center gap-6 text-gray-600 dark:text-gray-300">
+    <!-- Instagram -->
+    <a href="https://instagram.com/alone.id123" target="_blank" aria-label="Instagram" class="hover:text-pink-600 transition-colors">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" >
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@_alone453" target="_blank" aria-label="TikTok" class="hover:text-black dark:hover:text-white transition-colors">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M9.75 2.05v12.12a4.5 4.5 0 11-4.5-4.5V5.9a8.999 8.999 0 006.01 8.32v-3.32a4.5 4.5 0 01-1.51-8.85z"/>
+      </svg>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:dwiputrawibowo2009@gmail.com" target="_blank" aria-label="Email" class="hover:text-red-600 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16v16H4z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
